@@ -1,8 +1,10 @@
 #University
+
 ##This is simple command line project. 
-Clone this project and feel free to use.
-You can retrieve data from the database using the commands described below.
-Use command 'help' for check all commands.
+
+Clone this project and feel free to use. Run main method to start.
+You can retrieve data from the database using the commands described below. 
+Use command 'add test data' for add test data and  'help' for check all commands.
 * Who is head of department 'Literature Department'
 * Show 'Literature Department' statistic
 * Show the average salary for department 'Literature Department'
