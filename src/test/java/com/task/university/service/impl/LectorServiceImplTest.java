@@ -8,11 +8,7 @@ import com.task.university.constant.Constants;
 import com.task.university.entity.Degree;
 import com.task.university.entity.Department;
 import com.task.university.entity.Lector;
-import com.task.university.repository.DegreeRepository;
-import com.task.university.repository.DepartmentRepository;
 import com.task.university.repository.LectorRepository;
-import com.task.university.service.DegreeService;
-import com.task.university.service.DepartmentService;
 import com.task.university.service.LectorService;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -23,10 +19,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class LectorServiceImplTest {
-    private DegreeRepository degreeRepository;
-    private DegreeService degreeService;
-    private DepartmentRepository departmentRepository;
-    private DepartmentService departmentService;
     private LectorRepository lectorRepository;
     private LectorService lectorService;
     private Lector lector;
