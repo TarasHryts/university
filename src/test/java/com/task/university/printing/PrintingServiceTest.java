@@ -61,7 +61,6 @@ public class PrintingServiceTest {
         mathDepartment.setHeadOfDepartment(lector);
         departmentList.add(mathDepartment);
     }
-
     @Test
     public void printDataAvgSalaryOk() {
         when(lectorRepository.findByDepartments(any())).thenReturn(lectorList);
@@ -69,7 +68,6 @@ public class PrintingServiceTest {
         Assert.assertEquals("The average salary of Math Department is 450.0",
                 printingService.printData("Show the average salary for department 'Math Department'"));
     }
-
     @Test
     public void printDataAvgSalaryMistakeInDepartmentName() {
         when(lectorRepository.findByDepartments(any())).thenReturn(lectorList);
@@ -77,7 +75,6 @@ public class PrintingServiceTest {
         Assert.assertEquals("The average salary of Math Department is 450.0",
                 printingService.printData("Show the average salary for department 'Mah epartment'"));
     }
-
     @Test
     public void printDataAvgSalaryBadDepartmentName() {
         when(lectorRepository.findByDepartments(any())).thenReturn(lectorList);
@@ -91,34 +88,18 @@ public class PrintingServiceTest {
         Assert.assertEquals("Test data added...",
                 printingService.printData("Add test data"));
     }
-
-    @Test
-    public void printDataAddTestDataBad() {
-        Assert.assertEquals("Wrong command. Use command 'help'",
-                printingService.printData("Addtestdata"));
-    }
-
     @Test
     public void printDataHeadOfDepartmentOk() {
         when(departmentRepository.findByName(any())).thenReturn(mathDepartment);
         Assert.assertEquals("Head of Math Department department is Somename9\n",
                 printingService.printData("Who is head of department 'Math Department'"));
     }
-
     @Test
     public void printDataHeadOfDepartmentWrongNameOk() {
         when(departmentRepository.findByName(any())).thenReturn(mathDepartment);
         Assert.assertEquals("Head of Math Department department is Somename9\n",
                 printingService.printData("Who is head of department 'Ma Department'"));
     }
-
-    @Test
-    public void printDataHeadOfDepartmentBad() {
-        when(departmentRepository.findByName(any())).thenReturn(mathDepartment);
-        Assert.assertEquals("Wrong command. Use command 'help'",
-                printingService.printData("Who is head of dep Department'Math'"));
-    }
-
     @Test
     public void printDataCountEmployeeOk() {
         when(departmentRepository.findByName(any())).thenReturn(mathDepartment);
@@ -126,7 +107,6 @@ public class PrintingServiceTest {
         Assert.assertEquals("10",
                 printingService.printData("Show count of employee for 'Math Department'"));
     }
-
     @Test
     public void printDataCountEmployeeWrongNameOk() {
         when(departmentRepository.findByName(any())).thenReturn(mathDepartment);
@@ -134,14 +114,12 @@ public class PrintingServiceTest {
         Assert.assertEquals("10",
                 printingService.printData("Show count of employee for 'Ma Department'"));
     }
-
     @Test
     public void printDataCountEmployeeBed() {
         when(departmentRepository.findByName(any())).thenReturn(null);
         Assert.assertEquals("Incorrect department name: 'Math'",
                 printingService.printData("Show count of employee for 'Math'"));
     }
-
     @Test
     public void printDataSearchByNameOk() {
         when(lectorRepository.findByNameContainsOrSurnameContains(any())).thenReturn(lectorList);
@@ -150,9 +128,8 @@ public class PrintingServiceTest {
                         "Somename4 Somesurname4, Somename5 Somesurname5, " +
                         "Somename6 Somesurname6, Somename7 Somesurname7, " +
                         "Somename8 Somesurname8, Somename9 Somesurname9",
-                printingService.printData("Global search by ame"));
+                printingService.printData("Global search by 'ame'"));
     }
-
     @Test
     public void printDataSearchBySurnameOk() {
         when(lectorRepository.findByNameContainsOrSurnameContains(any())).thenReturn(lectorList);
@@ -161,9 +138,8 @@ public class PrintingServiceTest {
                         "Somename4 Somesurname4, Somename5 Somesurname5, " +
                         "Somename6 Somesurname6, Somename7 Somesurname7, " +
                         "Somename8 Somesurname8, Somename9 Somesurname9",
-                printingService.printData("Global search by sure"));
+                printingService.printData("Global search by 'sure'"));
     }
-
     @Test
     public void printDataIncorrectCommandOk() {
         when(departmentRepository.findByName(any())).thenReturn(null);
