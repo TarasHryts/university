@@ -12,7 +12,7 @@ public class Constants {
     public static final String SHOW_AVG_SALARY = "Show the average salary for department";
     //Example for test4 -- Show count of employee for 'Literature Department'
     public static final String SHOW_COUNT_EMPLOYEE = "Show count of employee for";
-    //Example for test5 -- Global search by ame
+    //Example for test5 -- Global search by 'ame'
     public static final String GLOBAL_SEARCH = "Global search by";
     // help
     public static final String HELP = "help";
