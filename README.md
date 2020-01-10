@@ -13,3 +13,5 @@ Use command 'add test data' for add test data and  'help' for check all commands
 * Show the average salary for department 'Literature Department'
 * Show count of employee for 'Literature Department'
 * Global search by ame
+
+#### <a name="information"></a>In case of commands errors the system will refine the request.
