@@ -93,12 +93,6 @@ public class PrintingServiceTest {
     }
 
     @Test
-    public void printDataAddTestDataBad() {
-        Assert.assertEquals("Wrong command. Use command 'help'",
-                printingService.printData("Addtestdata"));
-    }
-
-    @Test
     public void printDataHeadOfDepartmentOk() {
         when(departmentRepository.findByName(any())).thenReturn(mathDepartment);
         Assert.assertEquals("Head of Math Department department is Somename9\n",
@@ -110,13 +104,6 @@ public class PrintingServiceTest {
         when(departmentRepository.findByName(any())).thenReturn(mathDepartment);
         Assert.assertEquals("Head of Math Department department is Somename9\n",
                 printingService.printData("Who is head of department 'Ma Department'"));
-    }
-
-    @Test
-    public void printDataHeadOfDepartmentBad() {
-        when(departmentRepository.findByName(any())).thenReturn(mathDepartment);
-        Assert.assertEquals("Wrong command. Use command 'help'",
-                printingService.printData("Who is head of dep Department'Math'"));
     }
 
     @Test
@@ -150,7 +137,7 @@ public class PrintingServiceTest {
                         "Somename4 Somesurname4, Somename5 Somesurname5, " +
                         "Somename6 Somesurname6, Somename7 Somesurname7, " +
                         "Somename8 Somesurname8, Somename9 Somesurname9",
-                printingService.printData("Global search by ame"));
+                printingService.printData("Global search by 'ame'"));
     }
 
     @Test
@@ -161,7 +148,7 @@ public class PrintingServiceTest {
                         "Somename4 Somesurname4, Somename5 Somesurname5, " +
                         "Somename6 Somesurname6, Somename7 Somesurname7, " +
                         "Somename8 Somesurname8, Somename9 Somesurname9",
-                printingService.printData("Global search by sure"));
+                printingService.printData("Global search by 'sure'"));
     }
 
     @Test
